@@ -14,7 +14,7 @@ This converter gets the JSON data from the given link and convert that JSON data
 # How it works
 1. **get_data.py**
 
-	Get the json format data from the given link in the code. You can change the link in the **get_data.py**.
+	Get the json format data from the given link in the code. You can enter the link in the **get_data.py**.
 
 2. **create_mysql_tables.py**
 
