@@ -1,7 +1,7 @@
 import requests
 
 def get_data():
-	url = 'ENTER URL'
+	url = 'ENTER  URL'
 
 	r = requests.get(url)
 	data = r.json()
