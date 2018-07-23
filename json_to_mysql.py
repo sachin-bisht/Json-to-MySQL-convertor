@@ -75,6 +75,16 @@ def create_table_query(database, data):
 	global mcolumn
 	global mvalues
 
+	table1 = {}
+	column1 = ''
+	new_tables = {}
+	keys = ''
+	values = ''
+	new_table = {}
+
+	mcolumn = []
+	mvalues = []
+
 	i = 0
 
 	file = open('text.sql', 'w')
@@ -99,7 +109,7 @@ def create_table_query(database, data):
 
 			if type(value) is str:
 				values += '"' + str(value) + '", '
-				column1 += 'varchar(100), '
+				column1 += 'varchar(500), '
 			elif type(value) is int:
 				values += str(value) + ', '
 				column1 += 'int(18), '
@@ -193,8 +203,9 @@ def create_table_query(database, data):
 				if len(column1) > 2:
 					column1 = column1[:-2]
 				if mmm == 0:
-					tablename = 'table{}_{}'.format(i, str(key))
-					i += 1
+					# tablename = 'table{}_{}'.format(i, str(key))
+					# i += 1
+					tablename = '{}'.format(str(key))
 					query = "create table {}({})".format(tablename, column1)
 					file.write(query)
 					file.write('\n\n\n')
@@ -225,8 +236,12 @@ def create_table_query(database, data):
 
 
 def proc():
-	data = gd.get_data()
-	database = cmt.create_database()
-	create_table_query(database, data)
+
+	sanctionId = #list santion_id
+
+	for Id in sanctionId:
+		data = gd.get_data(Id)
+		database = cmt.create_database()
+		create_table_query(database, data)
 
 proc()
