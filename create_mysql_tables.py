@@ -56,7 +56,7 @@ def insert_remaining_columns(database, tablename, column, values):
                 vv = ''
                 val = values[ind]
                 if type(val) is str:
-                    vv = 'varchar(100)'
+                    vv = 'varchar(500)'
                 elif type(val) is int:
                     vv += 'int(18)'
                 elif type(val) is float:
